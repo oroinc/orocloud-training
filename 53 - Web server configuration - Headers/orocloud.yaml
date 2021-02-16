@@ -1,0 +1,33 @@
+---
+orocloud_options:
+    webserver:
+        header_x_frame: true
+        locations:
+            'root':
+                type: 'php'                      # php|static|rewrite
+                satisfy: any                     # all|any
+                location: '~ /index\.php(/|$)'   # location URI, supports regular expression
+                auth_basic_enable: true
+                auth_basic_userlist:
+                    admin:
+                        ensure: 'present'        # present|absent
+                        password: 'oro'
+                allow:
+                    - '127.0.0.1'
+                    - '127.0.0.2'
+                deny:
+                    - 'all'
+            'attachments':
+                type: 'php'
+                location: '~ /index\.php(/media|/payment|$)'
+                auth_basic_enable: false
+            'de':
+                type: 'php'
+                location: '/de'
+                fastcgi_param:
+                    'WEBSITE': '$host/de'
+            'en':
+                type: 'php'
+                location: '/en'
+                fastcgi_param:
+                    'WEBSITE': '$host/en'

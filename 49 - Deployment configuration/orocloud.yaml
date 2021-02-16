@@ -1,0 +1,27 @@
+---
+orocloud_options:
+    deployment:
+        install_commands:
+            - 'oro:install --sample-data=n --user-name=admin --user-email=admin@example.com --user-password=new_password --user-firstname=John --user-lastname=Doe --application-url=https://example.com --organization-name=Oro'
+
+        upgrade_commands:
+            - 'oro:platform:update'
+
+        git_clone_recursive: true
+
+        composer_command: '{{composer_cmd}} install --no-dev --optimize-autoloader'
+
+        after_composer_install_commands:
+            - 'command1'
+
+        db_extensions:
+            - 'uuid-ossp'
+            - 'pgcrypto'
+
+        before_backup_create_commands:
+            - 'command1'
+            - 'command2'
+
+        after_backup_create_commands:
+            - 'command1'
+            - 'command2'

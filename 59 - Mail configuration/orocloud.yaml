@@ -1,0 +1,7 @@
+---
+orocloud_options:
+    mail:
+        whitelist:
+            - 'example.com'
+            - 'examlpe.org'
+            - 'example.net'

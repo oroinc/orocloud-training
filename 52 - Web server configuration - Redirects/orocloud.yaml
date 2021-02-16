@@ -1,0 +1,8 @@
+---
+orocloud_options:
+    webserver:
+        redirects_map:
+            '/page-about.aspx': '/about'                                     # simple redirect
+            '~^/images/(.*)$': '/media/cache/images/$1'                      # redirect with parameter
+            '~*^/account_info\.php(.*)?$': '/customer/profile/'              # case insensitive
+            '~*^/(product_listing|product_details)\.php(.*)?$': '/products'  # list of options

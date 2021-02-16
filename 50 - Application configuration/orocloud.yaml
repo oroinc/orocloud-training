@@ -1,0 +1,6 @@
+---
+orocloud_options:
+    application:
+        maintenance_page: '/mnt/ocom/app/www/public/maintenance.html'
+        web_backend_prefix: '/adm'
+        consumers_debug_mode: true

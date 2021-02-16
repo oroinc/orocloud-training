@@ -1,0 +1,15 @@
+---
+orocloud_options:
+    elasticsearch:
+        synonyms:
+            '*':
+                - 'foo, bar, baz'
+                - 'spam, eggs, meal'
+                - 'null, void'
+
+            'index_name1':
+                - 'foo, bar, baz'
+                - 'spam, eggs, meal'
+                - 'null, void'
+            'index_name2':
+                - 'Alice, Bob, Dave, John'

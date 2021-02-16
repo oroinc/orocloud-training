@@ -1,0 +1,20 @@
+---
+orocloud_options:
+    deployment:
+        sanitize:
+            rawsql_add_rules:
+                - 'TRUNCATE oro_audit CASCADE;'
+                - "DELETE FROM oro_config_value WHERE name IN ('ga_account_number', 'google_geocoding_api_key')"
+            rawsql_delete_rules:
+                - 'TRUNCATE oro_tracking_visit_event'
+            rawsql_override_rules:
+                ... # Here will be long list of rules
+
+            update_add_rules:
+                - '{ table: oro_integration_transport, columns: [{name: orocrm_mailchimp_apikey, method: md5}, {name: gtm_container_id, method: md5}] }'
+            update_delete_rules:
+                - '{ table: oro_integration_transport, columns: [{name: api_key, method: md5},{name: api_user, method: md5},{name: api_token, method: md5}] }'
+            update_override_rules:
+                ... # Here will be long list of rules
+
+            custom_email_domain: 'example.com'
