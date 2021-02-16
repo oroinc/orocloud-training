@@ -5,9 +5,12 @@ orocloud_options:
             rawsql_add_rules:
                 - 'TRUNCATE oro_audit CASCADE;'
                 - "DELETE FROM oro_config_value WHERE name IN ('ga_account_number', 'google_geocoding_api_key')"
+                - 'UPDATE oro_price_product SET value = round((random()*99 + 1)::numeric, 2) WHERE value <> 0'
             rawsql_delete_rules:
                 - 'TRUNCATE oro_tracking_visit_event'
             rawsql_override_rules:
+                - 'TRUNCATE oro_message_queue'
+                - 'TRUNCATE oro_process_job'
                 ... # Here will be long list of rules
 
             update_add_rules:
@@ -15,6 +18,7 @@ orocloud_options:
             update_delete_rules:
                 - '{ table: oro_integration_transport, columns: [{name: api_key, method: md5},{name: api_user, method: md5},{name: api_token, method: md5}] }'
             update_override_rules:
+                - '{ table: orocrm_contact, columns: [{name: email, method: email}, {name: last_name, method: md5},{name: birthday, method: date}]}'
                 ... # Here will be long list of rules
 
             custom_email_domain: 'example.com'
