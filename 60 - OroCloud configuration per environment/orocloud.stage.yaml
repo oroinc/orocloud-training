@@ -1,0 +1,6 @@
+---
+orocloud_options:
+    mail:
+        whitelist:
+            - 'oroinc.com'
+            - 'orocommerce.com'

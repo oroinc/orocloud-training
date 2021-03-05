@@ -1,0 +1,5 @@
+---
+orocloud_options:
+    webserver:
+        blackfire_options:
+            agent_enabled: true
