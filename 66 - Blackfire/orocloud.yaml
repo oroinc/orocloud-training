@@ -1,0 +1,9 @@
+---
+orocloud_options:
+    webserver:
+        blackfire_options:
+            agent_enabled : true
+            server_id     : 'aa1a11a1-ac71-42f0-aa0b-0a63d29deed3'
+            server_token  : 'aaaa111471c04cb5fe51e71cf9a0d5f447483841a1df88b265d406ef2fe1e84d'
+            log_level     : '1'
+            log_path      : '/var/log/blackfire/agent.log'
