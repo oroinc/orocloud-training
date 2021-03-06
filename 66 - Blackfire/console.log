@@ -1,1 +1,2 @@
-$ orocloud-cli app:console "oro:message-queue:transport:consume oro.index oro_message_queue.client.delegate_message_processor --memory-limit=512 --message-limit=2" -vvv --blackfire-enable --blackfire-client-id aaaaaaa-051c-45b7-b049-6ac1111ad081 --blackfire-client-token aaaaaa14a4f7055ac089918e711111f818cf11e088c877f02157bbe0cf3998
+$ orocloud-cli app:console "oro:message-queue:transport:consume oro.index oro_message_queue.client.delegate_message_processor --memory-limit=512 --message-limit=2" 
+-vvv --blackfire-enable --blackfire-client-id aaaaaaa-051c-45b7-b049-6ac1111ad081 --blackfire-client-token aaaaaa14a4f7055ac089918e711111f818cf11e088c877f02157bbe0cf3998
